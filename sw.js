@@ -1,7 +1,7 @@
 'use strict';
 /* Ganga v1 — service worker mínimo: guarda el cascarón para abrir offline.
    deals.json siempre va a la red primero: una oferta vieja cacheada es peor que ninguna. */
-var CACHE = 'ganga-v1';
+var CACHE = 'ganga-v2';
 var SHELL = ['./', './index.html', './styles.css', './app.js', './manifest.webmanifest', './assets/icon-192.png', './assets/icon-512.png'];
 
 self.addEventListener('install', function (e) {

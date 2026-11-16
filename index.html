@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0B0B12">
+<meta name="description" content="Ganga: ofertas y cupones verificados en español, para latinos en EE.UU. Herramientas, trabajo, casa y tecnología.">
+<title>Ganga — Ofertas y cupones verificados</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icon-192.png" type="image/png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true">◆</span>
+    <div>
+      <h1>GANGA</h1>
+      <p class="tagline">Ofertas verificadas · en español · EE.UU.</p>
+    </div>
+  </div>
+  <div class="top-stats">
+    <span id="streakPill" class="pill pill-streak" title="Tu racha diaria">🔥 Racha: 0 días</span>
+    <span id="pointsPill" class="pill pill-points" title="Tus puntos">✨ 0 pts</span>
+    <button id="installBtn" class="install-btn" type="button" hidden>Instalar 📲</button>
+  </div>
+</header>
+
+<div class="affiliate-notice" role="note">
+  <strong>Aviso de afiliado:</strong> Como afiliado de Amazon ganamos una comisión por compras que califiquen, sin costo extra para ti.
+</div>
+
+<div class="example-banner" role="note">
+  ⚠️ <strong>Versión de prueba (Fase 0):</strong> las ofertas de abajo son <strong>EJEMPLOS</strong> tomados de capturas reales, <strong>por verificar fecha y precio</strong>. No son ofertas vivas confirmadas.
+</div>
+
+<div class="house-rule" role="note">
+  🚫 <strong>Regla de la casa: cero códigos muertos.</strong> Cada oferta lleva su hora de verificación y se re-prueba a diario; la que deja de funcionar sale el mismo día, marcada «Terminó hoy». Si una te falla, repórtala en su tarjeta: con 2 reportes se oculta sola (cuarentena) hasta re-probarla. Nada de expirados colgados como en otras páginas.
+</div>
+
+<div id="streakAlert" class="streak-alert" role="note" hidden>
+  🔥 Tu racha de <strong id="streakAlertDays">0 días</strong> se pierde hoy a medianoche si no marcas tu entrada. <button id="streakAlertBtn" class="mini-btn" type="button">Marcar entrada ahora</button>
+</div>
+
+<nav class="tabs" aria-label="Secciones">
+  <button id="tabBtnDeals" class="tab active" type="button" data-tab="deals">Ofertas</button>
+  <button id="tabBtnCodes" class="tab" type="button" data-tab="codes">Códigos</button>
+  <button id="tabBtnAlerts" class="tab" type="button" data-tab="alerts">Alertas</button>
+  <button id="tabBtnPoints" class="tab" type="button" data-tab="points">Puntos</button>
+</nav>
+
+<main>
+  <section id="panelDeals" class="panel active" aria-label="Ofertas">
+    <div id="surpriseCard" class="surprise-card" hidden>
+      <p class="surprise-kicker">🎁 Oferta sorpresa del día</p>
+      <h2 id="surpriseTitle"></h2>
+      <p id="surpriseText" class="surprise-text"></p>
+    </div>
+    <p class="panel-hint">Precio normal <strong>real</strong> (historial), no precio de lista inflado. Vota «Sí funcionó» o 👍 en cada tarjeta: ayudas a todos y ganas puntos por participar — nunca por comprar.</p>
+    <div id="dealsGrid" class="grid"></div>
+    <p id="dealsEmpty" class="empty" hidden>Todavía no hay ofertas cargadas.</p>
+  </section>
+
+  <section id="panelCodes" class="panel" aria-label="Códigos">
+    <p class="panel-hint">Toca una tarjeta para ver el código y copiarlo. Pégalo al pagar en la tienda, toca la flecha ➡️ y, si no agarra, intenta una vez más. Justo después de copiar es el mejor momento para invitar a alguien: abajo de cada código aparece el botón de compartir.</p>
+    <div id="codesGrid" class="grid"></div>
+    <p id="codesEmpty" class="empty" hidden>Todavía no hay códigos cargados.</p>
+  </section>
+
+  <section id="panelAlerts" class="panel" aria-label="Alertas">
+    <div class="alerts-prefs">
+      <h2>🔔 Tus categorías</h2>
+      <p class="panel-hint">Elige de qué quieres alertas. Las de tus categorías salen primero y marcadas con ★. Tu elección se guarda solo en este navegador.</p>
+      <div id="alertCats" class="chip-row"></div>
+    </div>
+    <ul id="alertsList" class="alerts"></ul>
+    <p id="alertsEmpty" class="empty" hidden>Todavía no hay alertas.</p>
+  </section>
+
+  <section id="panelPoints" class="panel" aria-label="Puntos y racha">
+    <div class="points-card">
+      <h2>Tu juego ✨</h2>
+      <p class="points-total"><span id="pointsTotal">0</span> puntos</p>
+      <p>Nivel: <strong id="pointsLevel">NPC</strong> · Racha: <strong id="streakCount">0</strong> día(s) 🔥</p>
+      <div class="level-progress">
+        <div class="level-progress-track"><div id="levelProgressFill" class="level-progress-fill"></div></div>
+        <p id="levelProgressText" class="level-progress-text"></p>
+      </div>
+      <div class="chest-box">
+        <h3>🎁 Cofre diario</h3>
+        <p class="panel-hint">Un cofre por día, con premio variable de puntos. Nunca sabes cuánto trae: por eso se abre diario.</p>
+        <button id="chestBtn" class="gold-btn" type="button">Abrir el cofre de hoy</button>
+        <p id="chestMsg" class="points-msg" aria-live="polite"></p>
+      </div>
+      <ul class="earn-list">
+        <li>🌞 Entrar hoy <span>+10</span> <button id="checkinBtn" class="mini-btn" type="button">Marcar entrada de hoy</button></li>
+        <li>👍 Votar / decir «sí funcionó» <span>+5</span> (desde Ofertas)</li>
+        <li>📣 Compartir e invitar tras copiar un código <span>+10</span> (desde Códigos, 1 vez al día por código)</li>
+        <li>🎁 Cofre diario <span>+5 a +25</span> (variable)</li>
+        <li>🔥 Racha de 7 días seguidos <span>+75</span></li>
+      </ul>
+      <p class="points-note"><strong>Límite duro, sin excepción:</strong> los puntos son SOLO por entrar, votar, tu racha y compartir. <strong>Nunca</strong> damos puntos por hacer clic en un link de afiliado ni por comprar — las reglas de Amazon Associates lo prohíben y esta casa no cruza esa línea. Tus puntos se guardan solo en este navegador.</p>
+      <p id="pointsMsg" class="points-msg" aria-live="polite"></p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p class="affiliate-notice footer-affiliate">Como afiliado de Amazon ganamos una comisión por compras que califiquen, sin costo extra para ti. También participamos en programas de otras tiendas; si compras con nuestros links, la tienda nos paga una comisión y a ti te cuesta lo mismo.</p>
+  <p class="powered">Powered by <a href="https://dopamindvip.com" target="_blank" rel="noopener">Dopamind VIP</a></p>
+  <p class="footer-small">Ganga · Fase 0 de prueba · Precios, códigos y vigencias siempre con su fecha de verificación en cada tarjeta. Sin escasez inventada.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

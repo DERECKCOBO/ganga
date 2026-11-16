@@ -1,0 +1,111 @@
+/* Ganga — sistema visual de la casa: negro profundo #0B0B12 + dorado premium #C9A227.
+   Elegante a propósito: que se vea cara aunque las ofertas sean baratas. Nada de look de cuponera. */
+:root{
+  --bg:#0B0B12; --card:#12121C; --card2:#181826; --line:#262638; --gold-line:#4a3f1d;
+  --text:#F5F1E6; --muted:#A8A294; --gold:#C9A227; --gold-bright:#E9C766; --gold-soft:#f0dfa8;
+  --green:#7FB069; --radius:18px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5}
+a{color:var(--gold-bright)}
+.topbar{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:20px 16px 10px;max-width:720px;margin:0 auto;flex-wrap:wrap}
+.brand{display:flex;gap:12px;align-items:center}
+.brand-mark{font-size:26px;color:var(--gold)}
+.brand h1{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:30px;letter-spacing:4px;font-weight:700;color:var(--text)}
+.tagline{margin:2px 0 0;color:var(--gold);font-size:11.5px;letter-spacing:1.6px;text-transform:uppercase}
+.top-stats{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pill{border:1px solid var(--gold-line);background:var(--card2);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:700}
+.pill-points{color:var(--gold-soft)}
+.install-btn{background:var(--gold);color:#171205;border:0;border-radius:999px;padding:9px 15px;font-weight:700;cursor:pointer}
+.affiliate-notice{max-width:720px;margin:8px auto;padding:10px 14px;background:#101722;border:1px solid #22344a;border-radius:12px;font-size:13px;color:#c8d6e5}
+.example-banner{max-width:720px;margin:8px auto;padding:10px 14px;background:#1c1808;border:1px solid var(--gold-line);border-radius:12px;font-size:13px;color:var(--gold-soft)}
+.streak-alert{max-width:720px;margin:8px auto;padding:12px 14px;background:#221a06;border:1px solid var(--gold);border-radius:12px;font-size:14px;color:var(--gold-soft)}
+.tabs{display:flex;gap:8px;max-width:720px;margin:14px auto 6px;padding:0 16px;flex-wrap:wrap}
+.tab{flex:1 1 auto;background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:10px 8px;font-size:15px;letter-spacing:.6px;cursor:pointer}
+.tab.active{background:var(--gold);border-color:var(--gold);color:#171205;font-weight:700}
+main{max-width:720px;margin:0 auto;padding:6px 16px 24px}
+.panel{display:none}
+.panel.active{display:block}
+.panel-hint{color:var(--muted);font-size:14px}
+.surprise-card{border:1px solid var(--gold);border-radius:var(--radius);padding:16px 18px;margin:10px 0 16px;background:linear-gradient(160deg,#1a1708,#12121C 70%)}
+.surprise-kicker{margin:0;color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:12px;font-weight:700}
+.surprise-card h2{margin:6px 0;font-family:Georgia,serif;font-weight:700}
+.surprise-text{margin:0;color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:560px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.35)}
+.photo{height:128px;display:flex;align-items:center;justify-content:center;font-size:54px;background:radial-gradient(circle at 50% 35%,#1d1d2e,#10101a)}
+.card-body{padding:14px 16px 16px}
+.badge{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:1px;padding:3px 9px;border-radius:999px;border:1px solid var(--gold-line);color:var(--gold-soft)}
+.badge-store{background:transparent;color:var(--muted);border:1px solid var(--line)}
+.card h3{margin:10px 0 6px;font-size:17px;font-weight:650}
+.price-row{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.price{font-size:27px;font-weight:800;color:var(--gold-bright)}
+.normal{color:var(--muted);font-size:13px}
+.off{border:1px solid var(--gold);color:var(--gold-bright);font-weight:800;font-size:12px;border-radius:8px;padding:2px 7px}
+.thermo{display:flex;align-items:center;gap:8px;margin:12px 0 4px}
+.thermo-track{flex:1;height:8px;background:#23233a;border-radius:999px;overflow:hidden}
+.thermo-fill{height:100%;background:linear-gradient(90deg,#8a6d1c,var(--gold),var(--gold-bright));border-radius:999px}
+.thermo-num{font-weight:800;color:var(--gold-bright);font-size:14px}
+.social-proof{color:var(--muted);font-size:12.5px;margin:2px 0}
+.notes{color:var(--muted);font-size:12.5px}
+.verified{font-size:12px;color:var(--muted)}
+.expiry{font-size:12.5px;color:var(--gold-soft)}
+.card-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.vote-btn,.deal-btn,.code-card{cursor:pointer}
+.vote-btn{background:transparent;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.vote-btn:disabled{opacity:.45;cursor:default}
+.deal-btn{flex:1;background:var(--gold);color:#171205;border:0;border-radius:10px;padding:10px 12px;font-weight:700;text-align:center;text-decoration:none}
+.deal-btn.disabled{background:var(--card2);color:var(--muted);pointer-events:none;font-weight:400;border:1px solid var(--line)}
+.code-card{width:100%;text-align:left;background:var(--card);border:1px solid var(--gold-line);border-radius:var(--radius);padding:16px;color:var(--text);box-shadow:0 10px 28px rgba(0,0,0,.35)}
+.code-card h3{margin:8px 0 4px}
+.code-reveal{margin-top:12px;background:#0d0d15;border:1px solid var(--gold-line);border-radius:10px;padding:11px 13px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.code-text{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:19px;font-weight:800;letter-spacing:1px;color:var(--gold-bright)}
+.copy-hint{font-size:12px;color:var(--muted)}
+.share-box{margin-top:12px;border-top:1px solid var(--line);padding-top:12px}
+.share-box p{margin:0 0 8px;font-size:13.5px}
+.gold-btn{background:var(--gold);color:#171205;border:0;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer}
+.gold-btn:disabled{opacity:.45;cursor:default}
+.alerts-prefs{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin-bottom:14px}
+.alerts-prefs h2{margin:0 0 4px;font-size:17px}
+.chip-row{display:flex;gap:8px;flex-wrap:wrap}
+.chip{background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:7px 13px;cursor:pointer;font-size:13.5px}
+.chip.on{border-color:var(--gold);color:var(--gold-bright);background:#1c1808;font-weight:700}
+.alerts{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.alerts li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.alerts li.mine{border-color:var(--gold)}
+.alerts .a-title{font-weight:700}
+.alerts .a-meta{color:var(--muted);font-size:12.5px}
+.star{color:var(--gold-bright)}
+.points-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.points-card h2{font-family:Georgia,serif;margin-top:0}
+.points-total{font-size:22px}
+.points-total span{font-size:38px;font-weight:800;color:var(--gold-bright)}
+.level-progress{margin:14px 0}
+.level-progress-track{height:10px;background:#23233a;border-radius:999px;overflow:hidden}
+.level-progress-fill{height:100%;width:0;background:linear-gradient(90deg,#8a6d1c,var(--gold),var(--gold-bright));transition:width .4s}
+.level-progress-text{color:var(--muted);font-size:13px;margin:6px 0 0}
+.chest-box{border:1px dashed var(--gold-line);border-radius:14px;padding:14px 16px;margin:16px 0}
+.chest-box h3{margin:0 0 4px}
+.earn-list{list-style:none;padding:0;display:grid;gap:10px}
+.earn-list span{color:var(--gold-bright);font-weight:700}
+.mini-btn{background:var(--gold);color:#171205;border:0;border-radius:999px;padding:6px 12px;font-weight:700;cursor:pointer;margin-left:8px}
+.mini-btn:disabled{opacity:.45;cursor:default}
+.points-note{color:var(--muted);font-size:13px}
+.points-msg{color:var(--gold-bright);font-weight:700;min-height:1.2em}
+.empty{color:var(--muted)}
+.footer{max-width:720px;margin:0 auto;padding:8px 16px 36px;text-align:center}
+.footer-affiliate{margin:0 auto 12px;text-align:left}
+.powered{font-size:15px;letter-spacing:.4px}
+.powered a{font-weight:800;text-decoration:none}
+.footer-small{color:var(--muted);font-size:12px}
+
+/* Sistema anti-expirados (regla de Dereck, 21:11 PT) */
+.house-rule{max-width:720px;margin:8px auto;padding:10px 14px;background:#101d16;border:1px solid #2c4a34;border-radius:12px;font-size:13px;color:#cfe5d2}
+.report-row{margin-top:12px;border-top:1px dashed var(--line);padding-top:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.report-btn{background:transparent;color:var(--muted);border:1px dashed #55556e;border-radius:10px;padding:7px 11px;font-size:12.5px;cursor:pointer}
+.report-btn:disabled{opacity:.55;cursor:default;color:var(--gold-soft);border-color:var(--gold-line)}
+.report-count{font-size:12px;color:var(--muted)}
+.report-note{flex-basis:100%;font-size:12px;color:var(--gold-soft);margin:2px 0 0}
+.quarantine-banner{background:#221a06;border:1px solid var(--gold);border-radius:10px;padding:8px 11px;font-size:12.5px;color:var(--gold-soft);margin:10px 0 0}
+.card.quarantined,.code-card.quarantined{opacity:.55}
